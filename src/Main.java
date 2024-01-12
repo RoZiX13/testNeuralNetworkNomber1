@@ -27,7 +27,7 @@ public class Main {
                 System.out.println();
 
                 if(calculate > a+b-1 && calculate < a+b+1){
-                    for (int k = 0; k < 1000; k++) {
+                    for (int k = 0; k < 10000; k++) {
                         listOfNeuralNetwork.add(neuralNetwork);
                     }
                     continue;
