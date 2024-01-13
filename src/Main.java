@@ -21,8 +21,50 @@ public class Main {
 
             for (int j = 0; j < sizeListOfNeuralNetwork; j++) {
                 NeuralNetwork neuralNetwork = listOfNeuralNetwork.get(j);
+<<<<<<< HEAD
                 increaseTheProbabilityOfReproduction(a, b,
                         listOfNeuralNetwork, neuralNetwork);
+=======
+                double calculate = neuralNetwork.calculate(a, b);
+                System.out.println("Нейронной сети №" + j);
+                System.out.println(a + " + " + b + " = " +  (a + b));
+                System.out.println(calculate);
+                System.out.println();
+
+                if(calculate > a+b-1 && calculate < a+b+1){
+                    for (int k = 0; k < 10000; k++) {
+                        listOfNeuralNetwork.add(neuralNetwork);
+                    }
+                    continue;
+                }
+                if(calculate > a+b-2 && calculate < a+b+2){
+                    for (int k = 0; k < 500; k++) {
+                        listOfNeuralNetwork.add(neuralNetwork);
+                    }
+                    continue;
+                }
+                if(calculate > a+b-5 && calculate < a+b+5){
+                    for (int k = 0; k < 300; k++) {
+                        listOfNeuralNetwork.add(neuralNetwork);
+                    }
+                    continue;
+                }
+                if(calculate > a+b-10 && calculate < a+b+10){
+                    for (int k = 0; k < 100; k++) {
+                        listOfNeuralNetwork.add(neuralNetwork);
+                    }
+                    continue;
+                }
+                if(calculate > a+b-20 && calculate < a+b+20){
+                    for (int k = 0; k < 25; k++) {
+                        listOfNeuralNetwork.add(neuralNetwork);
+                    }
+                    continue;
+                }
+                if(calculate > a+b-100 && calculate < a+b+100){
+                    listOfNeuralNetwork.add(neuralNetwork);
+                }
+>>>>>>> origin/main
             }
 
             for (int j = 0; j < 100; j++) {
