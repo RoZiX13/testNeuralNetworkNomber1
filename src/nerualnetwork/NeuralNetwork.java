@@ -8,31 +8,33 @@ import java.util.Random;
 public class NeuralNetwork {
 
     private static final Random random = new Random();
-    private double[][] weights = new double[2][];
-    private int[] arrayWithAmountNeurons = new int[2];
+    private double[][] weights = new double[3][];
+    private static final int[] arrayWithAmountNeurons = new int[3];
+    static {
+        arrayWithAmountNeurons[0] = 2;
+        arrayWithAmountNeurons[1] = 2;
+        arrayWithAmountNeurons[2] = 1;
+    }
 
     public NeuralNetwork (){
         weights[0] = new double[]{generateRandomDouble(), generateRandomDouble(),
                 generateRandomDouble(), generateRandomDouble()};
-        weights[1] =  new double[]{generateRandomDouble(), generateRandomDouble()};
-
-        arrayWithAmountNeurons[0] = 2;
-        arrayWithAmountNeurons[1] = 1;
+        weights[1] =  new double[]{generateRandomDouble(), generateRandomDouble(),
+                generateRandomDouble(), generateRandomDouble()};
+        weights[2] = new double[]{generateRandomDouble(), generateRandomDouble()};
     }
 
     public NeuralNetwork (double[][] weights){
         this.weights = weights;
-//        if(random.nextInt(100) == 1){
-//            int numberWeight = random.nextInt(6);
-//            int numberLayer = 0;
-//            while (weights[numberLayer].length <= numberWeight){
-//                numberWeight -= weights[numberLayer].length;
-//                numberLayer++;
-//            }
-//            weights[numberLayer][numberWeight] = generateRandomDouble();
-//        }
-        arrayWithAmountNeurons[0] = 2;
-        arrayWithAmountNeurons[1] = 1;
+        if (random.nextInt(1000) == 1){
+            int numberWeight = random.nextInt(10);
+            int numberLayer = 0;
+            while (weights[numberLayer].length <= numberWeight){
+                numberWeight -= weights[numberLayer].length;
+                numberLayer++;
+            }
+            weights[numberLayer][numberWeight] = weights[numberLayer][numberWeight];
+        }
     }
 
     public double[][] getWeights() {
@@ -71,8 +73,8 @@ public class NeuralNetwork {
         double amountNeurons = arrayWithAmountNeurons[numberLayer];
         double sumWight = 0;
         if(amountNeurons == 1){
-            for (int indexWight = 0; indexWight < listOfWights.size(); indexWight++) {
-                sumWight += listOfWights.get(indexWight);
+            for (Double listOfWight : listOfWights) {
+                sumWight += listOfWight;
             }
             listOfNeurons.add(sumWight);
             return;
